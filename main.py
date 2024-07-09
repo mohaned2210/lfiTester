@@ -92,7 +92,7 @@ def scan_url(url, payloads, timeout, delay, debug):
                 color = get_status_code_color(status_code)
                 if is_vulnerable(response, payload) and not check_false_positive(response, payload):
                     with log_lock:
-                        print(f"{color}Vulnerable: {new_url} (Status Code: {status_code}){Style.RESET_ALL}")
+                        print(f"{Fore.RED}Vulnerable: {new_url} (Status Code: {status_code}){Style.RESET_ALL}")
                     return
                 else:
                     with log_lock:
